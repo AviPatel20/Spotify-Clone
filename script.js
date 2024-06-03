@@ -36,11 +36,12 @@ async function getSongs(folder) {
     // show all the song in playlists
     let songUL = document.querySelector(".songLists").getElementsByTagName("ul")[0]
     songUL.innerHTML = ""
-    for (const song of songs) {
+    for (const song of songs) { 
+        console.log(songs)
         songUL.innerHTML = songUL.innerHTML + `<li>
         <img class="invert" src="./assests/icons/music.svg" alt="">
         <div class="info">
-            <div>${song.replaceAll("%20", " ")}</div>
+            <div>${song.replace("%20", " ")}</div>
             <div>Song Artist</div>
         </div>
         <div class="playnow">
@@ -116,7 +117,8 @@ async function displayAlbums() {
 async function main() {
 
     // Get the list of all songs 
-    await getSongs("songs/ncs")
+    await getSongs("songs/cs")
+    console.log(await getSongs("songs/cs"))
     playMusic(songs[0], true)
 
     // Display all the albums on the page
