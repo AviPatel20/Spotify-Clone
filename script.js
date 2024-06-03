@@ -117,8 +117,7 @@ async function displayAlbums() {
 async function main() {
 
     // Get the list of all songs 
-    await getSongs("songs/cs")
-    console.log(await getSongs("songs/cs"))
+    await getSongs("songs/cs") 
     playMusic(songs[0], true)
 
     // Display all the albums on the page
